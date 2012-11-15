@@ -1,0 +1,118 @@
+name = campus
+description = Install campus.
+version = VERSION
+core = 7.x
+
+dependencies[] = admin_menu
+dependencies[] = admin_menu_toolbar
+dependencies[] = ctools
+dependencies[] = ctools_custom_content
+dependencies[] = page_manager
+dependencies[] = views_content
+dependencies[] = chart
+dependencies[] = block
+dependencies[] = blog
+dependencies[] = color
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = dblog
+dependencies[] = field
+dependencies[] = field_sql_storage
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = filter
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = node
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = php
+dependencies[] = rdf
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = syslog
+dependencies[] = system
+dependencies[] = taxonomy
+dependencies[] = text
+dependencies[] = update
+dependencies[] = user
+dependencies[] = date
+dependencies[] = date_all_day
+dependencies[] = date_api
+dependencies[] = date_popup
+dependencies[] = date_views
+dependencies[] = devel
+dependencies[] = devel_generate
+dependencies[] = features
+dependencies[] = uuid_features
+dependencies[] = fe_block
+dependencies[] = feeds
+dependencies[] = feeds_ui
+dependencies[] = feeds_import
+dependencies[] = feeds_news
+dependencies[] = node_reference
+dependencies[] = references
+dependencies[] = viewreference
+dependencies[] = file_entity
+dependencies[] = media
+dependencies[] = media_internet
+dependencies[] = media_vimeo
+dependencies[] = media_youtube
+dependencies[] = node_export
+dependencies[] = node_export_features
+dependencies[] = oauth_common
+dependencies[] = block_class
+dependencies[] = entity
+dependencies[] = job_scheduler
+dependencies[] = libraries
+dependencies[] = menu_block
+dependencies[] = module_filter
+dependencies[] = pathauto
+dependencies[] = profile2
+dependencies[] = profile2_page
+dependencies[] = token
+dependencies[] = fieldable_panels_panes
+dependencies[] = panels_mini
+dependencies[] = panels_node
+dependencies[] = panels
+dependencies[] = panels_ipe
+dependencies[] = services
+dependencies[] = uuid_services
+dependencies[] = googleanalytics
+dependencies[] = google_analytics_api
+dependencies[] = google_analytics_reports
+dependencies[] = omega_tools
+dependencies[] = ckeditor
+dependencies[] = jcarousel
+dependencies[] = superfish
+dependencies[] = uuid
+dependencies[] = vc_load_ajax
+dependencies[] = vc_content
+dependencies[] = views
+dependencies[] = views_bulk_operations
+dependencies[] = views_slideshow
+dependencies[] = views_slideshow_cycle
+dependencies[] = views_ui
+dependencies[] = webform
+dependencies[] = webform_share
+
+
+
+
+
+
+
+
+
+
+
+
+; Information added by drupal.org packaging script on 2012-11-07
+version = "7.17"
+project = "drupal"
+datestamp = "1352325357"
+
