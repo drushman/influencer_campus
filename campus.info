@@ -1,8 +1,31 @@
-name = campus
-description = Install campus.
-version = VERSION
+name = Campus
+description = Campus.
+exclusive = "1"
 core = 7.x
 
+; Core
+dependencies[] = block
+dependencies[] = color
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = syslog
+dependencies[] = search
+dependencies[] = overlay
+dependencies[] = field
+dependencies[] = file
+dependencies[] = rdf
+dependencies[] = dblog
+
+; Contrib
 dependencies[] = admin_menu
 dependencies[] = admin_menu_toolbar
 dependencies[] = ctools
@@ -10,36 +33,8 @@ dependencies[] = ctools_custom_content
 dependencies[] = page_manager
 dependencies[] = views_content
 dependencies[] = chart
-dependencies[] = block
-dependencies[] = blog
-dependencies[] = color
-dependencies[] = comment
-dependencies[] = contextual
-dependencies[] = dashboard
-dependencies[] = dblog
-dependencies[] = field
-dependencies[] = field_sql_storage
-dependencies[] = field_ui
-dependencies[] = file
-dependencies[] = filter
-dependencies[] = help
-dependencies[] = image
-dependencies[] = list
-dependencies[] = menu
-dependencies[] = node
-dependencies[] = number
-dependencies[] = options
-dependencies[] = path
-dependencies[] = php
-dependencies[] = rdf
-dependencies[] = search
-dependencies[] = shortcut
-dependencies[] = syslog
-dependencies[] = system
-dependencies[] = taxonomy
-dependencies[] = text
-dependencies[] = update
-dependencies[] = user
+dependencies[] = context
+dependencies[] = context_ui
 dependencies[] = date
 dependencies[] = date_all_day
 dependencies[] = date_api
@@ -58,10 +53,12 @@ dependencies[] = node_reference
 dependencies[] = references
 dependencies[] = viewreference
 dependencies[] = file_entity
+dependencies[] = imce
 dependencies[] = media
 dependencies[] = media_internet
 dependencies[] = media_vimeo
 dependencies[] = media_youtube
+dependencies[] = metatag
 dependencies[] = node_export
 dependencies[] = node_export_features
 dependencies[] = oauth_common
@@ -72,8 +69,9 @@ dependencies[] = libraries
 dependencies[] = menu_block
 dependencies[] = module_filter
 dependencies[] = pathauto
-dependencies[] = profile2
-dependencies[] = profile2_page
+;dependencies[] = profile2
+;dependencies[] = profile2_page
+dependencies[] = strongarm
 dependencies[] = token
 dependencies[] = fieldable_panels_panes
 dependencies[] = panels_mini
@@ -85,34 +83,38 @@ dependencies[] = uuid_services
 dependencies[] = googleanalytics
 dependencies[] = google_analytics_api
 dependencies[] = google_analytics_reports
-dependencies[] = omega_tools
+dependencies[] = themekey
+dependencies[] = themekey_compat
+dependencies[] = themekey_features
+dependencies[] = themekey_ui
 dependencies[] = ckeditor
 dependencies[] = jcarousel
-dependencies[] = superfish
+;dependencies[] = superfish
 dependencies[] = uuid
-dependencies[] = vc_load_ajax
-dependencies[] = vc_content
 dependencies[] = views
 dependencies[] = views_bulk_operations
-dependencies[] = views_slideshow
-dependencies[] = views_slideshow_cycle
-dependencies[] = views_ui
 dependencies[] = webform
-dependencies[] = webform_share
+
+; Custom
+dependencies[] = vc_content
+dependencies[] = vc_admin
+dependencies[] = vc_load_ajax
+
+; Features
+
+dependencies[] = campus_fields
+dependencies[] = campus_content_type
+;dependencies[] = campus_context
+dependencies[] = campus_default
+dependencies[] = campus_panel
+;dependencies[] = campus_proflle2
+;dependencies[] = campus_demo_content
+;dependencies[] = campus_role_permissions
+;dependencies[] = campus_roles
+;dependencies[] = campus_views
+;dependencies[] = campus_menus
+;dependencies[] = campus_blocks
 
 
 
-
-
-
-
-
-
-
-
-
-; Information added by drupal.org packaging script on 2012-11-07
-version = "7.17"
-project = "drupal"
-datestamp = "1352325357"
-
+files[] = campus.profile
