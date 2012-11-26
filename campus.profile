@@ -27,6 +27,10 @@ function campus_configure_form_submit($form, &$form_state) {
 function campus_install_tasks($install_state) {
   return array(
     'campus_profile_setup' => array(),
+    'campus_settings_form' => array(
+      'display_name' => st('Setup Campus settings'),
+      'type' => 'form',
+    ),
   );
 }
 
@@ -96,4 +100,79 @@ function campus_update_fpp() {
 		$fpp->field_page_banner[LANGUAGE_NONE][0] = (array)$file_img;
     $fpp = fieldable_panels_panes_save($fpp);
   }
+}
+
+function campus_settings_form() {
+  $form = array();
+  $form['intro'] = array(
+    '#markup' => '<p>' . st('Setting your campus client website.') . '</p>',
+  );
+  
+  $form['campus_type'] = array(
+    '#type' => 'radios',
+    '#title' => st('Choice campus type.'),
+    '#default_value' => 1,
+    '#options' => array(
+      0 => t('Global site.'),
+      1 => t('Campus site.'),
+    ),
+  );
+  
+  $form['campus_site'] = array(
+    '#type' => 'fieldset',
+    '#title' => st('Campus site settings'),
+    '#collapsible' => FALSE,
+    '#collapsed' => TRUE,
+    '#states' => array(
+      'visible' => array(
+         ':input[name="field_content_pane_full[und]"]' => array('value' => 1),            
+      )               
+    ),
+  );
+  
+  $form['campus_site']['campus_name'] = array(
+    '#type' => 'textfield',
+    '#title' => st('Campus Name'),
+    '#required' => TRUE,
+  );
+  
+  $form['campus_site']['campus_address'] = array(
+    '#type' => 'textfield',
+    '#title' => st('Campus Address'),
+  );
+  
+  $form['campus_site']['campus_country'] = array(
+    '#type' => 'textfield',
+    '#title' => st('Campus Country'),
+    '#required' => TRUE,
+  );
+  
+  $form['campus_site']['campus_services'] = array(
+    '#type' => 'textfield',
+    '#title' => st('Campus Services'),
+    '#description' => st('Campus services time. Example: 9:30 AM, 11:30 AM, 5:30 PM, 7:30 PM'),    
+  );
+  
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => st('Continue'),
+  );
+  return $form;
+}
+
+function campus_settings_form_submit($form, &$form_state) {
+  $values = $form_state['values'];
+  
+  if ($values['campus_type']) {
+    variable_set('campus_name', $values['campus_name'])); 
+    variable_set('campus_country', $values['campus_country']));
+    if ($values['campus_address']) {
+      variable_set('campus_address', $values['campus_address']));
+    }
+    if ($values['campus_services']) {
+      variable_set('campus_services', $values['campus_services'])); 
+    }
+  } else {
+    variable_set('campus_name', 'GLOBAL'));
+  }  
 }
