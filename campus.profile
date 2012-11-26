@@ -164,15 +164,15 @@ function campus_settings_form_submit($form, &$form_state) {
   $values = $form_state['values'];
   
   if ($values['campus_type']) {
-    variable_set('campus_name', $values['campus_name'])); 
-    variable_set('campus_country', $values['campus_country']));
+    variable_set('campus_name', $values['campus_name']); 
+    variable_set('campus_country', $values['campus_country']);
     if ($values['campus_address']) {
-      variable_set('campus_address', $values['campus_address']));
+      variable_set('campus_address', $values['campus_address']);
     }
     if ($values['campus_services']) {
-      variable_set('campus_services', $values['campus_services'])); 
+      variable_set('campus_services', $values['campus_services']); 
     }
   } else {
-    variable_set('campus_name', 'GLOBAL'));
+    variable_set('campus_name', 'GLOBAL');
   }  
 }
