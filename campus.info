@@ -1,6 +1,7 @@
-name = Campus
-description = Campus.
+name =  Campus
+description = Influencer Chursh Campus.
 exclusive = "1"
+version = VERSION
 core = 7.x
 
 ; Core
@@ -99,6 +100,7 @@ dependencies[] = webform
 dependencies[] = vc_content
 dependencies[] = vc_admin
 dependencies[] = vc_load_ajax
+dependencies[] = vc_remote_view
 
 ; Features
 
