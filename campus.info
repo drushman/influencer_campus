@@ -106,16 +106,17 @@ dependencies[] = vc_remote_view
 
 dependencies[] = campus_fields
 dependencies[] = campus_content_type
-;dependencies[] = campus_context
+dependencies[] = campus_context
 dependencies[] = campus_default
 dependencies[] = campus_panel
-;dependencies[] = campus_proflle2
+dependencies[] = campus_proflle2
 ;dependencies[] = campus_demo_content
-;dependencies[] = campus_role_permissions
-;dependencies[] = campus_roles
-;dependencies[] = campus_views
-;dependencies[] = campus_menus
-;dependencies[] = campus_blocks
+dependencies[] = campus_role_permissions
+dependencies[] = campus_roles
+dependencies[] = campus_views
+dependencies[] = campus_menus
+dependencies[] = campus_blocks
+dependencies[] = campus_webform
 
 
 

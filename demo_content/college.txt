@@ -1,0 +1,1 @@
+Title|field_link_text|field_custom_teaser_image|field_video|Body
