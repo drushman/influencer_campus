@@ -88,6 +88,9 @@ function campus_update_fpp() {
     }
     $fpp->field_page_video['und'][0]['fid'] = $file->fid;
     
+	if (empty($item[5])) {
+	  continue;
+	}
     $file_img = new StdClass();
 		$file_img->uid = 1;
 		$file_img->uri = DRUPAL_ROOT.'/profiles/campus/demo_content/'.$item[5];
