@@ -107,53 +107,57 @@ function campus_update_fpp() {
 
 function campus_settings_form() {
   $form = array();
-  $form['intro'] = array(
-    '#markup' => '<p>' . st('Setting your campus client website.') . '</p>',
+  
+  $form['campus_settings'] = array(
+    '#type' => 'fieldset',
+    '#title' => st('Setting your campus client website.'),
   );
   
-  $form['campus_type'] = array(
+  $form['campus_settings']['campus_type'] = array(
     '#type' => 'radios',
-    '#title' => st('Choice campus type.'),
-    '#default_value' => 1,
+    '#title' => st('Choice campus type:'),
+    '#default_value' => variable_get('campus_type', 'campus'),
     '#options' => array(
-      0 => t('Global site.'),
-      1 => t('Campus site.'),
+      'global' => st('Global site'),
+      'campus' => st('Campus site'),
     ),
   );
   
-  $form['campus_site'] = array(
+  $form['campus_settings']['campus_information'] = array(
     '#type' => 'fieldset',
-    '#title' => st('Campus site settings'),
-    '#collapsible' => FALSE,
-    '#collapsed' => TRUE,
+    '#title' => st('Campus site information'),
     '#states' => array(
       'visible' => array(
-         ':input[name="field_content_pane_full[und]"]' => array('value' => 1),            
+         ':input[name="campus_type"]' => array('value' => 'campus'),            
       )               
     ),
   );
   
-  $form['campus_site']['campus_name'] = array(
+  $form['campus_settings']['campus_information']['campus_name'] = array(
     '#type' => 'textfield',
-    '#title' => st('Campus Name'),
-    '#required' => TRUE,
+    '#title' => st('Campus name'),
+    '#default_value' => variable_get('campus_name', 'Campus'),
+    '#required' => TRUE
   );
   
-  $form['campus_site']['campus_address'] = array(
+  $form['campus_settings']['campus_information']['campus_address'] = array(
     '#type' => 'textfield',
-    '#title' => st('Campus Address'),
+    '#title' => st('Campus address'),
+    '#default_value' => variable_get('campus_address', ''),
   );
   
-  $form['campus_site']['campus_country'] = array(
+  $form['campus_settings']['campus_information']['campus_country'] = array(
     '#type' => 'textfield',
     '#title' => st('Campus Country'),
+    '#default_value' => variable_get('campus_country', 'Australia'),
     '#required' => TRUE,
   );
   
-  $form['campus_site']['campus_services'] = array(
+  $form['campus_settings']['campus_information']['campus_services'] = array(
     '#type' => 'textfield',
-    '#title' => st('Campus Services'),
-    '#description' => st('Campus services time. Example: 9:30 AM, 11:30 AM, 5:30 PM, 7:30 PM'),    
+    '#title' => st('Campus services'),
+    '#default_value' => variable_get('campus_services', ''),
+    '#description' => t('Campus services time. Example: 9:30 AM, 11:30 AM, 5:30 PM, 7:30 PM'),
   );
   
   $form['submit'] = array(
