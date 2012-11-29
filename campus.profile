@@ -82,11 +82,6 @@ function campus_update_fpp() {
       $file->type = 'video';
       $file->status = 1;
       $file = file_save($file);
-	  //$file = file_uri_to_object('youtube://v/' . $value, TRUE);
-	  //$provider = media_internet_get_provider('http://www.youtube.com/watch?v=hUBYkFubCIk');
-	  //$file = $provider->save();
-	//dsm($file);
-	  //$file = file_save($file);
     }
     $fpp->field_page_video['und'][0]['fid'] = $file->fid;
     if (empty($item[5])) {
