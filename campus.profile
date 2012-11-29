@@ -43,6 +43,7 @@ function campus_profile_setup() {
   campus_create_demo_menu_links();
   module_enable(array('campus_blocks_setting'));
   campus_update_block_class() ;
+  module_disable(array('menu_import'));
 }
 
 /**
