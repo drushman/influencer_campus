@@ -152,6 +152,7 @@ function campus_create_demo_menus() {
   
   foreach($menus as $menu){
 		menu_save($menu);
+    watchdog('menu', 'Add menu %name', aray('%name' => $menu['menu_name']));
 	}
 }
 
@@ -664,6 +665,7 @@ function campus_create_demo_menu_links() {
 
   foreach($menu_links as $menu_link){
 		menu_link_save($menu_link);
+    watchdog('menu', 'Add menu link %name', aray('%name' => $menu_link['menu_name']));
 	}  
 }
 
