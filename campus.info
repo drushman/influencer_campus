@@ -67,6 +67,7 @@ dependencies[] = views
 dependencies[] = views_bulk_operations
 dependencies[] = webform
 dependencies[] = defaultcontent
+dependencies[] = block_class
 
 ; Custom
 dependencies[] = vc_content

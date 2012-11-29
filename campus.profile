@@ -42,6 +42,7 @@ function campus_profile_setup() {
   campus_create_demo_menus();
   campus_create_demo_menu_links();
   module_enable(array('campus_blocks_setting'));
+  campus_update_block_class() ;
 }
 
 /**
@@ -103,7 +104,19 @@ function campus_update_fpp() {
 }
 
 function campus_update_block_class() {
-
+	if (!module_exists('block_class')) { 
+		return;
+	}
+	db_insert('block_class')->fields(array('module' => 'menu', 'delta' => 'menu-footer-menu', 'css_class' => 'footer-menu'))->execute();
+	db_insert('block_class')->fields(array('module' => 'menu', 'delta' => 'menu-fresh-dashboard', 'css_class' => 'menu-dashboard'))->execute();
+	db_insert('block_class')->fields(array('module' => 'block', 'delta' => 'menu-footer-menu', 'css_class' => ''))->execute();
+	db_insert('block_class')->fields(array('module' => 'block', 'delta' => '', 'css_class' => ''))->execute();
+	db_insert('block_class')->fields(array('module' => 'menu_block', 'delta' => '11', 'css_class' => 'block-menu-social-network-link'))->execute();
+	db_insert('block_class')->fields(array('module' => 'menu_block', 'delta' => '3', 'css_class' => 'sidebar-menu'))->execute();
+	db_insert('block_class')->fields(array('module' => 'menu_block', 'delta' => '5', 'css_class' => 'sidebar-menu'))->execute();
+	db_insert('block_class')->fields(array('module' => 'menu_block', 'delta' => '7', 'css_class' => 'menu-dashboard'))->execute();
+	db_insert('block_class')->fields(array('module' => 'vc_admin', 'delta' => 'dashboard_user_tool', 'css_class' => 'user-links'))->execute();
+	db_insert('block_class')->fields(array('module' => 'vc_content', 'delta' => 'current_campus_menu', 'css_class' => 'block-current-campus'))->execute();
 }
 
 /**
