@@ -104,7 +104,7 @@ dependencies[] = campus_proflle2
 dependencies[] = campus_role_permissions
 dependencies[] = campus_roles
 dependencies[] = campus_views
-dependencies[] = campus_menus
+;dependencies[] = campus_menus
 dependencies[] = campus_blocks
 dependencies[] = campus_webform
 
