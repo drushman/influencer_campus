@@ -205,7 +205,7 @@ function campus_save_menu($name) {
 	}
 	foreach ($result as $type => $value) {
 		$msg_type = $type == 'failed' ? 'error' : 'status';
-		watchdog(t($msgs[$type], array('@count' => $value)));
+		watchdog($msg_type,'Values: %count' ,array('%count' => $value));
 	}
 }
 
