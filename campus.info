@@ -84,6 +84,7 @@ dependencies[] = jcarousel
 dependencies[] = views
 dependencies[] = views_bulk_operations
 dependencies[] = webform
+dependencies[] = defaultcontent
 
 ; Custom
 dependencies[] = vc_content
