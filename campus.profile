@@ -176,7 +176,7 @@ function campus_create_demo_menus() {
 	foreach($menus as $menu){
 		watchdog('menu', 'Add menu %name', array('%name' => $menu['menu_name']));
 		menu_save($menu);
-		campus_save_menu($name);
+		campus_save_menu($menu['menu_name']);
 	}
 }
 
