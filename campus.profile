@@ -69,23 +69,27 @@ function campus_update_fpp() {
     $fpp = fieldable_panels_panes_save($fpp);
     $fpp->field_page_title['und'][0]['value'] = $item[6];
     $fpp->field_page_description['und'][0]['value'] = $item[3];
-    $value=$item[4]; //Youtube video ID
-
-    $fid = db_query('SELECT fid FROM {file_managed} WHERE uri = :uri', array(':uri' => 'youtube://v/' . $value))->fetchField();
-    if (!empty($fid)) {
-      $file = file_load($fid);
-    } 
-    else {
-      $file = new stdClass();
-      $file->uid = 1;
-      $file->filename = $value;
-      $file->uri = 'youtube://v/' . $value;
-      $file->filemime = 'video/youtube';
-      $file->type = 'video';
-      $file->status = 1;
-      $file = file_save($file);
-    }
-    $fpp->field_page_video['und'][0]['fid'] = $file->fid;
+    
+	$value=$item[4]; //Youtube video ID
+	if (!empty($value)) {
+		$fid = db_query('SELECT fid FROM {file_managed} WHERE uri = :uri', array(':uri' => 'youtube://v/' . $value))->fetchField();
+		if (!empty($fid)) {
+		  $file = file_load($fid);
+		} 
+		else {
+		  $file = new stdClass();
+		  $file->uid = 1;
+		  $file->filename = $value;
+		  $file->uri = 'youtube://v/' . $value;
+		  $file->filemime = 'video/youtube';
+		  $file->type = 'video';
+		  $file->status = 1;
+		  $file = file_save($file);
+		}
+		$fpp->field_page_video['und'][0]['fid'] = $file->fid;
+	}
+	
+    
     if (empty($item[5])) {
 	  continue;
 	}
