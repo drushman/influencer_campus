@@ -41,6 +41,7 @@ function campus_profile_setup() {
   campus_update_fpp();
   campus_create_demo_menus();
   campus_create_demo_menu_links();
+  module_enable(array('campus_blocks_setting'));
 }
 
 /**
@@ -99,6 +100,10 @@ function campus_update_fpp() {
 		$fpp->field_page_banner[LANGUAGE_NONE][0] = (array)$file_img;
     $fpp = fieldable_panels_panes_save($fpp);
   }
+}
+
+function campus_update_block_class() {
+
 }
 
 /**

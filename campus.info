@@ -20,6 +20,7 @@ dependencies[] = search
 dependencies[] = field
 dependencies[] = file
 dependencies[] = dblog
+dependencies[] = toolbar
 
 ; Contrib
 dependencies[] = ctools
@@ -61,7 +62,7 @@ dependencies[] = themekey
 dependencies[] = themekey_compat
 dependencies[] = themekey_features
 dependencies[] = jcarousel
-dependencies[] = superfish
+;dependencies[] = superfish
 dependencies[] = views
 dependencies[] = views_bulk_operations
 dependencies[] = webform
@@ -76,7 +77,6 @@ dependencies[] = vc_webform_block
 
 
 ; Features
-dependencies[] = campus_blocks_setting
 dependencies[] = campus_content_type
 dependencies[] = campus_context
 dependencies[] = campus_default
@@ -85,6 +85,8 @@ dependencies[] = campus_roles
 dependencies[] = campus_views
 dependencies[] = campus_webform
 dependencies[] = campus_permissions
+dependencies[] = campus_themekey_settings
+;dependencies[] = campus_blocks_setting
 
 
 
