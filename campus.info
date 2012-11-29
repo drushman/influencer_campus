@@ -81,11 +81,10 @@ dependencies[] = campus_content_type
 dependencies[] = campus_context
 dependencies[] = campus_default
 dependencies[] = campus_panel
-dependencies[] = campus_permissions
 dependencies[] = campus_roles
 dependencies[] = campus_views
-dependencies[] = campus_blocks
 dependencies[] = campus_webform
+dependencies[] = campus_permissions
 
 
 

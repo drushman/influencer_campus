@@ -39,8 +39,6 @@ projects[imce][version] = "1.6"
 
 projects[jcarousel][version] = "2.6"
 
-projects[job_scheduler][version] = "2.0-alpha3"
-
 projects[libraries][version] = "2.0"
 
 projects[link][version] = "1.0"
@@ -54,8 +52,6 @@ projects[menu_block][version] = "2.3"
 projects[metatag][version] = "1.0-beta4"
 
 projects[module_filter][version] = "1.7"
-
-projects[references][version] = "2.0"
 
 projects[oauth][version] = "3.0"
 
@@ -72,8 +68,6 @@ projects[superfish][version] = "1.8"
 projects[themekey][version] = "2.3"
 
 projects[token][version] = "1.4"
-
-projects[viewreference][version] = "3.4"
 
 projects[views][version] = "3.5"
 
