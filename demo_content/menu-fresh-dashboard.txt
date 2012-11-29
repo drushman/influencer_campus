@@ -1,0 +1,3 @@
+Dashboard|vc/dashboard|Site SEO admin page
+Content|vc/contents|Content admin page
+Site settings|vc/site_settings|Site settings admin page

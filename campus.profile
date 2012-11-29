@@ -172,11 +172,44 @@ function campus_create_demo_menus() {
     'description' => '',
   );
   
-  foreach($menus as $menu){
+	foreach($menus as $menu){
 		menu_save($menu);
-    watchdog('menu', 'Add menu %name', array('%name' => $menu['menu_name']));
+		campus_save_menu($name);
+		watchdog('menu', 'Add menu %name', array('%name' => $menu['menu_name']));
 	}
 }
+
+
+function campus_save_menu($name) {
+
+	$name = 'main-menu';
+	$file->uid = 1;
+	$file->uri = DRUPAL_ROOT ."/profiles/campus/demo_content/{$name}.txt";
+	$file->filemime = file_get_mimetype($file->uri);
+	$file->status = 1;
+	$dest = file_default_scheme() . '://'.$name;
+	$file = file_copy($file, $dest);
+	$file = file_save($file);
+	
+	$option = array(
+			'create_content' => 0,
+			'link_to_content' => 0 ,
+			'remove_menu_items' => 1,
+	);
+	
+	module_load_include('inc', 'menu_import', 'includes/import');
+	$menu = menu_import_parse_menu_from_file($file->uri, $name, $option );
+	file_delete($file);
+	$result = menu_import_save_menu($menu, $options);
+	if (empty($result['failed'])) {
+		unset($result['failed']);
+	}
+	foreach ($result as $type => $value) {
+		$msg_type = $type == 'failed' ? 'error' : 'status';
+		watchdog(t($msgs[$type], array('@count' => $value)));
+	}
+}
+
 
 /**
  * Creates menu link items.
