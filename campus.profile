@@ -69,7 +69,7 @@ function campus_update_fpp() {
     $fpp = fieldable_panels_panes_save($fpp);
     $fpp->field_page_title['und'][0]['value'] = $item[6];
     $fpp->field_page_description['und'][0]['value'] = $item[3];
-    
+    $fpp->field_page_description['und'][0]['format'] = 'full_html';
 	$value=$item[4]; //Youtube video ID
 	if (!empty($value)) {
 		$fid = db_query('SELECT fid FROM {file_managed} WHERE uri = :uri', array(':uri' => 'youtube://v/' . $value))->fetchField();
