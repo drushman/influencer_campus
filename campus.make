@@ -79,6 +79,8 @@ projects[views_slideshow][version] = "3.0"
 
 projects[webform][version] = "3.18"
 
+projects[menu_import][version] = "1.2"
+
 ; Themes
 projects[omega][version] = "3.1"
 
