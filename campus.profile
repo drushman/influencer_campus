@@ -105,6 +105,15 @@ function campus_update_fpp() {
 		$fpp->field_page_banner[LANGUAGE_NONE][0] = (array)$file_img;
     $fpp = fieldable_panels_panes_save($fpp);
   }
+  
+  $invalid_fpp = array( 2, 4, 5);
+//  db_delete('fieldable_panels_panes')
+//    ->condition('fpid', $invalid_fpp, 'in')
+//    ->execute();
+//  db_delete('fieldable_panels_panes_revision')
+//    ->condition('fpid', $invalid_fpp, 'in')
+//    ->execute();
+  fieldable_panels_panes_delete_multiple($invalid_fpp);
 }
 
 function campus_update_block_class() {
