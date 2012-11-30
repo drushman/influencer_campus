@@ -212,7 +212,7 @@ function campus_save_menu($name) {
 	module_load_include('inc', 'menu_import', 'includes/import');
 	$menu = menu_import_parse_menu_from_file($file->uri, $name, $option );
 	file_delete($file);
-	$result = menu_import_save_menu($menu, $options);
+	$result = menu_import_save_menu($menu, $option);
 	if (empty($result['failed'])) {
 		unset($result['failed']);
 	}
