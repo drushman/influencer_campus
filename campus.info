@@ -88,7 +88,7 @@ dependencies[] = campus_views
 dependencies[] = campus_webform
 dependencies[] = campus_permissions
 dependencies[] = campus_themekey_settings
-;dependencies[] = campus_blocks_setting
+dependencies[] = campus_blocks_setting
 
 
 

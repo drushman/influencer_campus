@@ -40,9 +40,9 @@ function campus_install_tasks($install_state) {
 function campus_profile_setup() {
   campus_update_fpp();
   campus_create_demo_menus();
-  module_enable(array('campus_blocks_setting'));
+  cache_clear_all();
+  module_enable(array('campus_blocks_setting', 'vc_menu_default'));
   campus_update_block_class() ;
-  module_disable(array('menu_import'));
 }
 
 /**
@@ -107,12 +107,6 @@ function campus_update_fpp() {
   }
   
   $invalid_fpp = array( 2, 4, 5);
-//  db_delete('fieldable_panels_panes')
-//    ->condition('fpid', $invalid_fpp, 'in')
-//    ->execute();
-//  db_delete('fieldable_panels_panes_revision')
-//    ->condition('fpid', $invalid_fpp, 'in')
-//    ->execute();
   fieldable_panels_panes_delete_multiple($invalid_fpp);
 }
 
@@ -184,41 +178,6 @@ function campus_create_demo_menus() {
 	foreach($menus as $menu){
 		watchdog('menu', 'Add menu %name', array('%name' => $menu['menu_name']));
 		menu_save($menu);
-		campus_save_menu($menu['menu_name']);
-	}
-}
-
-
-function campus_save_menu($name) {
-	$file->uid = 1;
-	$file->uri = DRUPAL_ROOT ."/profiles/campus/demo_content/{$name}.txt";
-	$file->filemime = file_get_mimetype($file->uri);
-	$file->status = 1;
-	$dest = file_default_scheme() . '://'.$name;
-	$file = file_copy($file, $dest);
-	$file = file_save($file);
-	
-	$option = array(
-			'create_content' => 0,
-			'link_to_content' => 1 ,
-			'remove_menu_items' => 1,
-			'node_type' => '' ,
-			'node_body' => '' ,
-			'node_author' => 1 ,
-			'node_status' => 0 ,
-			'node_alias' => 0 
-	);
-	
-	module_load_include('inc', 'menu_import', 'includes/import');
-	$menu = menu_import_parse_menu_from_file($file->uri, $name, $option );
-	file_delete($file);
-	$result = menu_import_save_menu($menu, $option);
-	if (empty($result['failed'])) {
-		unset($result['failed']);
-	}
-	foreach ($result as $type => $value) {
-		$msg_type = $type == 'failed' ? 'error' : 'status';
-		watchdog($msg_type,'Values: %count' ,array('%count' => $value));
 	}
 }
 
