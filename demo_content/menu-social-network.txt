@@ -1,4 +1,0 @@
-Facebook|<front>|
-Twitter|<front>|
-Vimeo|http://vimeo.com/|
-Rss|rss.xml|

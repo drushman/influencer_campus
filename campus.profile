@@ -200,8 +200,13 @@ function campus_save_menu($name) {
 	
 	$option = array(
 			'create_content' => 0,
-			'link_to_content' => 0 ,
+			'link_to_content' => 1 ,
 			'remove_menu_items' => 1,
+			'node_type' => '' ,
+			'node_body' => '' ,
+			'node_author' => 1 ,
+			'node_status' => 0 ,
+			'node_alias' => 0 
 	);
 	
 	module_load_include('inc', 'menu_import', 'includes/import');
