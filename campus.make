@@ -84,14 +84,7 @@ projects[menu_import][version] = "1.2"
 ; Themes
 projects[omega][version] = "3.1"
 
-; Libraries
-libraries[superfish][download][type] = "git"
-libraries[superfish][download][url] = "https://github.com/mehrpadin/Superfish-for-Drupal.git"
 
-; Please fill the following out. Type may be one of get, git, bzr or svn,
-; and url is the url of the download.
-libraries[ckeditor][download][type] = "file"
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor%20for%20Drupal/CKEditor%203.6.3%20for%20Drupal/ckeditor_3.6.3_for_drupal_7.zip"
 
 projects[features_campus][type] = "module"
 projects[features_campus][download][type] = "git"
@@ -110,3 +103,13 @@ projects[themes][download][url] = "https://github.com/tuongduy/influencer_themes
 projects[campus][type] = profile
 projects[campus][download][type] = git
 projects[campus][download][url] = "https://github.com/tuongduy/influencer_campus.git"
+
+
+; Libraries
+libraries[superfish][download][type] = "git"
+libraries[superfish][download][url] = "https://github.com/mehrpadin/Superfish-for-Drupal.git"
+libraries[superfish][type] = "libraries"
+
+libraries[ckeditor][download][type] = "file"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor%20for%20Drupal/CKEditor%203.6.3%20for%20Drupal/ckeditor_3.6.3_for_drupal_7.zip"
+libraries[ckeditor][type] = "libraries"
