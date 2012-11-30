@@ -88,14 +88,14 @@ projects[omega][version] = "3.1"
 libraries[superfish][download][type] = "git"
 libraries[superfish][download][url] = "https://github.com/mehrpadin/Superfish-for-Drupal.git"
 libraries[superfish][directory_name] = "superfish"
-libraries[superfish][type] = "library"
+libraries[superfish][type] = "libraries"
 
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
 ; and url is the url of the download.
 libraries[ckeditor][download][type] = "file"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor%20for%20Drupal/CKEditor%203.6.3%20for%20Drupal/ckeditor_3.6.3_for_drupal_7.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
-libraries[ckeditor][type] = "library"
+libraries[ckeditor][type] = "libraries"
 
 projects[features_campus][type] = "module"
 projects[features_campus][download][type] = "git"
