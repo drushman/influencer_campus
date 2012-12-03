@@ -79,16 +79,16 @@ dependencies[] = vc_webform_block
 
 
 ; Features
+dependencies[] = campus_panel
+dependencies[] = vc_menu_default
 dependencies[] = campus_content_type
 dependencies[] = campus_context
 dependencies[] = campus_default
-dependencies[] = campus_panel
 dependencies[] = campus_roles
 dependencies[] = campus_views
 dependencies[] = campus_webform
 dependencies[] = campus_permissions
 dependencies[] = campus_themekey_settings
-dependencies[] = campus_blocks_setting
 
 
 
