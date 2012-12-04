@@ -9,7 +9,7 @@ Campuses|<front>||expanded
 Connect|<front>||expanded
 -Groups|group|
 -Ministries|campus|
--Join a Group|<front>|
+-Join a Group|join_a_group|
 Give|<front>||disabled
 Resources|<front>||expanded
 -Podcasts|podcasts|
@@ -17,7 +17,7 @@ Resources|<front>||expanded
 -Store|store|
 TV|<front>||expanded
 -Influencers Live|influencers_live||expanded
--Highlights|<front>|
--Streaming Help|<front>|
+-Highlights|highlights|
+-Streaming Help|streaming_help|
 Contact|<front>||expanded
 -Concierge|concierge|

@@ -18,7 +18,7 @@ Resources|<front>||expanded
 -Store|store|
 TV|<front>||expanded
 -Influencers Live|influencers_live|
--Highlights|<front>|
--Streaming Help|<front>|
+-Highlights|highlights|
+-Streaming Help|streaming_help|
 Contact|<front>||expanded
 -Concierge|concierge|
