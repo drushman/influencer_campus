@@ -58,7 +58,9 @@ function campus_update_fpp() {
   $rows = array_slice($rows, 1); 
   foreach($rows as $row){
     $item = explode("|", $row);
-    $values = array('bundle' => 'fieldable_panels_pane', 
+
+    $values = array(
+      'bundle' => 'fieldable_panels_pane',
       'title'=> $item[0], 
       'admin_title' => $item[1], 
       'category' => $item[2], 
@@ -69,7 +71,8 @@ function campus_update_fpp() {
     $fpp->field_page_title['und'][0]['value'] = $item[6];
     $fpp->field_page_description['und'][0]['value'] = $item[3];
     $fpp->field_page_description['und'][0]['format'] = 'full_html';
-  	$value=$item[4]; //Youtube video ID
+
+  	$value = $item[4]; //Youtube video ID
   	if (!empty($value)) {
   		$fid = db_query('SELECT fid FROM {file_managed} WHERE uri = :uri', array(':uri' => 'youtube://v/' . $value))->fetchField();
   		if (!empty($fid)) {
@@ -86,21 +89,20 @@ function campus_update_fpp() {
   		  $file = file_save($file);
   		}
   		$fpp->field_page_video['und'][0]['fid'] = $file->fid;
-  	}	
+  	}
     
-    if (empty($item[5])) {
-  	  continue;
+    if (!empty($item[5])) {
+      $file_img = new StdClass();
+  		$file_img->uid = 1;
+  		$file_img->uri = DRUPAL_ROOT.'/profiles/campus/demo_content/'.$item[5];
+  		$file_img->filemime = file_get_mimetype($file->uri);
+  		$file_img->status = 1;
+  		$name = $item[5];
+  		$dest = file_default_scheme() . '://'.$name;
+  		$file_img = file_copy($file_img, $dest);
+  		$file_img = file_save($file_img);
+  		$fpp->field_page_banner[LANGUAGE_NONE][0] = (array)$file_img;
     }
-    $file_img = new StdClass();
-		$file_img->uid = 1;
-		$file_img->uri = DRUPAL_ROOT.'/profiles/campus/demo_content/'.$item[5];
-		$file_img->filemime = file_get_mimetype($file->uri);
-		$file_img->status = 1;
-		$name = $item[5];
-		$dest = file_default_scheme() . '://'.$name;
-		$file_img = file_copy($file_img, $dest);
-		$file_img = file_save($file_img);
-		$fpp->field_page_banner[LANGUAGE_NONE][0] = (array)$file_img;
     $fpp = fieldable_panels_panes_save($fpp);
   }
   
@@ -115,9 +117,8 @@ function campus_update_block_class() {
 	db_insert('block_class')->fields(array('module' => 'menu', 'delta' => 'menu-footer-menu', 'css_class' => 'footer-menu'))->execute();
 	db_insert('block_class')->fields(array('module' => 'menu', 'delta' => 'menu-fresh-dashboard', 'css_class' => 'menu-dashboard'))->execute();
 //	db_insert('block_class')->fields(array('module' => 'block', 'delta' => 'menu-footer-menu', 'css_class' => ''))->execute();
-	db_insert('block_class')->fields(array('module' => 'block', 'delta' => '3', 'css_class' => 'navigation-menu'))->execute();
+	db_insert('block_class')->fields(array('module' => 'block', 'delta' => '2', 'css_class' => 'navigation-menu'))->execute();
 	db_insert('block_class')->fields(array('module' => 'block', 'delta' => '11', 'css_class' => 'block-menu-social-network-link'))->execute();
-	db_insert('block_class')->fields(array('module' => 'block', 'delta' => '2', 'css_class' => 'devotion_message'))->execute();
 	db_insert('block_class')->fields(array('module' => 'menu_block', 'delta' => '5', 'css_class' => 'sidebar-menu'))->execute();
   db_insert('block_class')->fields(array('module' => 'menu_block', 'delta' => '3', 'css_class' => 'sidebar-menu'))->execute();
 	db_insert('block_class')->fields(array('module' => 'block', 'delta' => '7', 'css_class' => 'menu-dashboard'))->execute();
@@ -173,7 +174,8 @@ function campus_create_demo_menus() {
     'title' => 'Social network link',
     'description' => 'Menu items for social icons at footer region of website.',
   );
-  // Exported menu: menu-site-copyright-link.
+
+  // Exported menu: menu-site-copyright.
   $menus['menu-site-copyright'] = array(
     'menu_name' => 'menu-site-copyright',
     'title' => 'Site copyright',
