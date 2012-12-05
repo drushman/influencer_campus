@@ -59,39 +59,38 @@ function campus_update_fpp() {
   foreach($rows as $row){
     $item = explode("|", $row);
     $values = array('bundle' => 'fieldable_panels_pane', 
-        'title'=> $item[0], 
-        'admin_title' => $item[1], 
-        'category' => $item[2], 
-        'reusable' => TRUE, 
+      'title'=> $item[0], 
+      'admin_title' => $item[1], 
+      'category' => $item[2], 
+      'reusable' => TRUE, 
     );
     $fpp = fieldable_panels_panes_create($values);
     $fpp = fieldable_panels_panes_save($fpp);
     $fpp->field_page_title['und'][0]['value'] = $item[6];
     $fpp->field_page_description['und'][0]['value'] = $item[3];
     $fpp->field_page_description['und'][0]['format'] = 'full_html';
-	$value=$item[4]; //Youtube video ID
-	if (!empty($value)) {
-		$fid = db_query('SELECT fid FROM {file_managed} WHERE uri = :uri', array(':uri' => 'youtube://v/' . $value))->fetchField();
-		if (!empty($fid)) {
-		  $file = file_load($fid);
-		} 
-		else {
-		  $file = new stdClass();
-		  $file->uid = 1;
-		  $file->filename = $value;
-		  $file->uri = 'youtube://v/' . $value;
-		  $file->filemime = 'video/youtube';
-		  $file->type = 'video';
-		  $file->status = 1;
-		  $file = file_save($file);
-		}
-		$fpp->field_page_video['und'][0]['fid'] = $file->fid;
-	}
-	
+  	$value=$item[4]; //Youtube video ID
+  	if (!empty($value)) {
+  		$fid = db_query('SELECT fid FROM {file_managed} WHERE uri = :uri', array(':uri' => 'youtube://v/' . $value))->fetchField();
+  		if (!empty($fid)) {
+  		  $file = file_load($fid);
+  		} 
+  		else {
+  		  $file = new stdClass();
+  		  $file->uid = 1;
+  		  $file->filename = $value;
+  		  $file->uri = 'youtube://v/' . $value;
+  		  $file->filemime = 'video/youtube';
+  		  $file->type = 'video';
+  		  $file->status = 1;
+  		  $file = file_save($file);
+  		}
+  		$fpp->field_page_video['und'][0]['fid'] = $file->fid;
+  	}	
     
     if (empty($item[5])) {
-	  continue;
-	}
+  	  continue;
+    }
     $file_img = new StdClass();
 		$file_img->uid = 1;
 		$file_img->uri = DRUPAL_ROOT.'/profiles/campus/demo_content/'.$item[5];
