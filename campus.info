@@ -90,6 +90,4 @@ dependencies[] = campus_webform
 dependencies[] = campus_permissions
 dependencies[] = campus_themekey_settings
 
-
-
 files[] = campus.profile
