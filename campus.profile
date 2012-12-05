@@ -140,25 +140,25 @@ function campus_create_demo_menus() {
   $menus['menu-footer-menu'] = array(
     'menu_name' => 'menu-footer-menu',
     'title' => 'Footer menu',
-    'description' => '',
+    'description' => 'Menu at footer region of website.',
   );
   // Exported menu: menu-fresh-dashboard.
   $menus['menu-fresh-dashboard'] = array(
     'menu_name' => 'menu-fresh-dashboard',
     'title' => 'Fresh Dashboard',
-    'description' => '',
+    'description' => 'Left menu in Vietcoop Dashboard pages.',
   );
   // Exported menu: menu-homepage-news-box.
   $menus['menu-homepage-news-box'] = array(
     'menu_name' => 'menu-homepage-news-box',
     'title' => 'Homepage news box',
-    'description' => '',
+    'description' => 'Menu items of Home boxes block at Campus homepage.',
   );
   // Exported menu: menu-influncer-campus.
   $menus['menu-influncer-campus'] = array(
     'menu_name' => 'menu-influncer-campus',
     'title' => 'Influncer Campus',
-    'description' => '',
+    'description' => 'Link to Influencer Campus, display at Dropdown Menu (beside Main menu).',
   );
   // Exported menu: menu-new-influencer.
   $menus['menu-new-influencer'] = array(
@@ -170,7 +170,13 @@ function campus_create_demo_menus() {
   $menus['menu-social-network-link'] = array(
     'menu_name' => 'menu-social-network-link',
     'title' => 'Social network link',
-    'description' => '',
+    'description' => 'Menu items for social icons at footer region of website.',
+  );
+  // Exported menu: menu-site-copyright-link.
+  $menus['menu-site-copyright'] = array(
+    'menu_name' => 'menu-site-copyright',
+    'title' => 'Site copyright',
+    'description' => 'Link items of Disclaimer and Privacy Policy page.',
   );
   
 	foreach($menus as $menu){
