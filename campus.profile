@@ -39,7 +39,6 @@ function campus_install_tasks($install_state) {
  */
 function campus_profile_setup() {
   campus_update_fpp();
-  campus_create_demo_menus();
   module_enable(array('campus_blocks_setting'));
   campus_update_block_class() ;
 }
@@ -58,9 +57,8 @@ function campus_update_fpp() {
   $rows = array_slice($rows, 1); 
   foreach($rows as $row){
     $item = explode("|", $row);
-
     $values = array(
-      'bundle' => 'fieldable_panels_pane',
+      'bundle' => 'fieldable_panels_pane', 
       'title'=> $item[0], 
       'admin_title' => $item[1], 
       'category' => $item[2], 
@@ -71,7 +69,6 @@ function campus_update_fpp() {
     $fpp->field_page_title['und'][0]['value'] = $item[6];
     $fpp->field_page_description['und'][0]['value'] = $item[3];
     $fpp->field_page_description['und'][0]['format'] = 'full_html';
-
   	$value = $item[4]; //Youtube video ID
   	if (!empty($value)) {
   		$fid = db_query('SELECT fid FROM {file_managed} WHERE uri = :uri', array(':uri' => 'youtube://v/' . $value))->fetchField();
@@ -125,69 +122,6 @@ function campus_update_block_class() {
 	db_insert('block_class')->fields(array('module' => 'vc_admin', 'delta' => 'dashboard_user_tool', 'css_class' => 'user-links'))->execute();
 	db_insert('block_class')->fields(array('module' => 'vc_content', 'delta' => 'current_campus_menu', 'css_class' => 'block-current-campus'))->execute();
 }
-
-/**
- * Creates menu items.
- */
-function campus_create_demo_menus() {
-  $menus = array();
-
-  // Exported menu: main-menu.
-  $menus['main-menu'] = array(
-    'menu_name' => 'main-menu',
-    'title' => 'Main menu',
-    'description' => 'The <em>Main</em> menu is used on many sites to show the major sections of the site, often in a top navigation bar.',
-  );
-  // Exported menu: menu-footer-menu.
-  $menus['menu-footer-menu'] = array(
-    'menu_name' => 'menu-footer-menu',
-    'title' => 'Footer menu',
-    'description' => 'Menu at footer region of website.',
-  );
-  // Exported menu: menu-fresh-dashboard.
-  $menus['menu-fresh-dashboard'] = array(
-    'menu_name' => 'menu-fresh-dashboard',
-    'title' => 'Fresh Dashboard',
-    'description' => 'Left menu in Vietcoop Dashboard pages.',
-  );
-  // Exported menu: menu-homepage-news-box.
-  $menus['menu-homepage-news-box'] = array(
-    'menu_name' => 'menu-homepage-news-box',
-    'title' => 'Homepage news box',
-    'description' => 'Menu items of Home boxes block at Campus homepage.',
-  );
-  // Exported menu: menu-influncer-campus.
-  $menus['menu-influncer-campus'] = array(
-    'menu_name' => 'menu-influncer-campus',
-    'title' => 'Influncer Campus',
-    'description' => 'Link to Influencer Campus, display at Dropdown Menu (beside Main menu).',
-  );
-  // Exported menu: menu-new-influencer.
-  $menus['menu-new-influencer'] = array(
-    'menu_name' => 'menu-new-influencer',
-    'title' => 'New Influencer',
-    'description' => 'Display 2 link "Im new" and "Be a Influencer" at campus site header block',
-  );
-  // Exported menu: menu-social-network-link.
-  $menus['menu-social-network-link'] = array(
-    'menu_name' => 'menu-social-network-link',
-    'title' => 'Social network link',
-    'description' => 'Menu items for social icons at footer region of website.',
-  );
-
-  // Exported menu: menu-site-copyright.
-  $menus['menu-site-copyright'] = array(
-    'menu_name' => 'menu-site-copyright',
-    'title' => 'Site copyright',
-    'description' => 'Link items of Disclaimer and Privacy Policy page.',
-  );
-  
-	foreach($menus as $menu){
-		watchdog('menu', 'Add menu %name', array('%name' => $menu['menu_name']));
-		menu_save($menu);
-	}
-}
-
 
 function campus_settings_form() {
   $form = array();
