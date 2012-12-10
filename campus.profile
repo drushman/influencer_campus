@@ -39,6 +39,7 @@ function campus_install_tasks($install_state) {
  */
 function campus_profile_setup() {
   campus_update_fpp();
+  //campus_update_menu();
   module_enable(array('campus_blocks_setting'));
   campus_update_block_class() ;
 }
@@ -121,6 +122,40 @@ function campus_update_block_class() {
 	db_insert('block_class')->fields(array('module' => 'block', 'delta' => '7', 'css_class' => 'menu-dashboard'))->execute();
 	db_insert('block_class')->fields(array('module' => 'vc_admin', 'delta' => 'dashboard_user_tool', 'css_class' => 'user-links'))->execute();
 	db_insert('block_class')->fields(array('module' => 'vc_content', 'delta' => 'current_campus_menu', 'css_class' => 'block-current-campus'))->execute();
+}
+
+function campus_update_menu() {
+//  $menu['menu-fresh-dashboard'] = array(
+//    'menu_name' => 'menu-fresh-dashboard',
+//    'title' => 'Fresh Dashboard',
+//    'description' => 'Left menu in Vietcoop Dashboard pages.',
+//  );   
+//  menu_save($menu);       
+  watchdog('menu', 'Add menu link %name', array('%name' => $menu['menu_name']));  
+	$file->uid = 1;
+	$file->uri = drupal_get_path('module', 'vc_menu_default') . "/include/{$menu['menu_name']}.txt";
+	$file->filemime = file_get_mimetype($file->uri);
+	$file->status = 1;
+	$dest = file_default_scheme() . '://'.$menu['menu_name'];
+	$file = file_copy($file, $dest);
+	$file = file_save($file);
+	
+	$option = array(
+			'create_content' => 0,
+			'link_to_content' => 0,
+			'remove_menu_items' => 1,
+			'node_type' => '',
+			'node_body' => '',
+			'node_author' => 0,
+			'node_status' => 0,
+			'node_alias' => 0,
+	);
+	
+	module_load_include('inc', 'menu_import', 'includes/import');
+	
+	$menu = menu_import_parse_menu_from_file($file->uri, $name, $option );	
+	menu_import_save_menu($menu, $option);
+  file_delete($file);
 }
 
 function campus_settings_form() {
