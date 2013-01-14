@@ -1,7 +1,6 @@
 name =  Campus
 description = Influencer Chursh Campus.
 exclusive = "1"
-;version = VERSION
 core = 7.x
 
 ; Core
