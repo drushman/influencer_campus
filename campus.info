@@ -68,6 +68,7 @@ dependencies[] = webform
 dependencies[] = defaultcontent
 dependencies[] = block_class
 dependencies[] = menu_import
+dependencies[] = wysiwyg
 
 ; Custom
 dependencies[] = vc_content
