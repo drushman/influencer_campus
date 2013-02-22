@@ -40,8 +40,9 @@ function campus_install_tasks($install_state) {
 function campus_profile_setup() {
   campus_update_fpp();
   //campus_update_menu();
-  module_enable(array('campus_blocks_setting'));
+  module_enable(array('campus_blocks_setting', 'vc_admin'));
   campus_update_block_class() ;
+  campus_update_menu();
 }
 
 /**
@@ -125,11 +126,11 @@ function campus_update_block_class() {
 }
 
 function campus_update_menu() {
-//  $menu['menu-fresh-dashboard'] = array(
-//    'menu_name' => 'menu-fresh-dashboard',
-//    'title' => 'Fresh Dashboard',
-//    'description' => 'Left menu in Vietcoop Dashboard pages.',
-//  );   
+  $menu = array(
+    'menu_name' => 'menu-fresh-dashboard',
+    'title' => 'Fresh Dashboard',
+    'description' => 'Left menu in Vietcoop Dashboard pages.',
+  );   
 //  menu_save($menu);       
   watchdog('menu', 'Add menu link %name', array('%name' => $menu['menu_name']));  
 	$file->uid = 1;
@@ -153,7 +154,7 @@ function campus_update_menu() {
 	
 	module_load_include('inc', 'menu_import', 'includes/import');
 	
-	$menu = menu_import_parse_menu_from_file($file->uri, $name, $option );	
+	$menu = menu_import_parse_menu_from_file($file->uri, $menu['menu_name'], $option );	
 	menu_import_save_menu($menu, $option);
   file_delete($file);
 }
