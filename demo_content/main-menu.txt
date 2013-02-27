@@ -10,6 +10,7 @@ Campuses|<front>||expanded
 Church Life|<front>||expanded
 -Groups|group|
 -Ministries|campus|
+-College|college|
 Give|<front>|
 -Giving|give|
 Resources|<front>||expanded
@@ -21,4 +22,5 @@ TV|<front>||expanded
 -Highlights|highlights|
 -Streaming Help|streaming_help|
 Contact|<front>||expanded
+-Contact|contact|
 -Concierge|concierge|
