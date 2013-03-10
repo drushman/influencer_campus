@@ -40,7 +40,7 @@ function campus_install_tasks($install_state) {
 function campus_profile_setup() {
   campus_update_fpp();
   //campus_update_menu();
-  module_enable(array('campus_blocks_setting', 'vc_admin'));
+  module_enable(array('campus_blocks_setting'));
   campus_update_block_class() ;
   campus_update_menu();
 }
