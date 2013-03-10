@@ -5,7 +5,7 @@ api = 2
 projects[drupal][version] = "7.21"
 
 ; Modules
-projects[admin_menu][version] = "3.0-rc3"
+projects[admin_menu][version] = "3.0-rc4"
 
 projects[block_class][version] = "1.2"
 
@@ -13,39 +13,39 @@ projects[ctools][version] = "1.2"
 
 projects[chart][version] = "1.1"
 
-projects[context][version] = "3.0-beta4"
+projects[context][version] = "3.0-beta6"
 
 projects[date][version] = "2.6"
 
-projects[defaultcontent][version] = "1.0-alpha6"
+projects[defaultcontent][version] = "1.0-alpha9"
 
 projects[devel][version] = "1.3"
 
-projects[entity][version] = "1.0-rc3"
+projects[entity][version] = "1.0"
 
-projects[features_extra][version] = "1.0-alpha1"
+projects[features_extra][version] = "1.0-alpha2"
 
 projects[features][version] = "1.0"
 
-projects[fieldable_panels_panes][version] = "1.2"
+projects[fieldable_panels_panes][version] = "1.4"
 
-projects[media][version] = "1.2"
+projects[media][version] = "1.3"
 
 projects[google_analytics_reports][version] = "1.3"
 
 projects[google_analytics][version] = "1.3"
 
-projects[imce][version] = "1.6"
+projects[imce][version] = "1.7"
 
 projects[jcarousel][version] = "2.6"
 
-projects[libraries][version] = "2.0"
+projects[libraries][version] = "2.1"
 
-projects[link][version] = "1.0"
+projects[link][version] = "1.1"
 
 projects[media_vimeo][version] = "1.0-beta5"
 
-projects[media_youtube][version] = "2.0-rc1"
+projects[media_youtube][version] = "2.0-rc2"
 
 projects[menu_block][version] = "2.3"
 
@@ -53,13 +53,13 @@ projects[metatag][version] = "1.0-beta4"
 
 projects[module_filter][version] = "1.7"
 
-projects[oauth][version] = "3.0"
+projects[oauth][version] = "3.1"
 
 projects[panels][version] = "3.3"
 
 projects[pathauto][version] = "1.2"
 
-projects[profile2][version] = "1.2"
+projects[profile2][version] = "1.3"
 
 projects[strongarm][version] = "2.0"
 
@@ -67,11 +67,11 @@ projects[superfish][version] = "1.8"
 
 projects[themekey][version] = "2.3"
 
-projects[token][version] = "1.4"
+projects[token][version] = "1.5"
 
 projects[views][version] = "3.5"
 
-projects[views_bulk_operations][version] = "3.0"
+projects[views_bulk_operations][version] = "3.1"
 
 projects[views_horizontal_slider][version] = "1.0"
 
