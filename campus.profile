@@ -39,10 +39,14 @@ function campus_install_tasks($install_state) {
  */
 function campus_profile_setup() {
   campus_update_fpp();
-  //campus_update_menu();
   module_enable(array('campus_blocks_setting'));
   campus_update_block_class() ;
   campus_update_menu();
+  
+  // Revert all features
+  features_rebuild();
+  features_revert();
+  cache_clear_all();
 }
 
 /**
@@ -127,11 +131,11 @@ function campus_update_block_class() {
 
 function campus_update_menu() {
   $menu = array(
-    'menu_name' => 'menu-fresh-dashboard',
-    'title' => 'Fresh Dashboard',
-    'description' => 'Left menu in Vietcoop Dashboard pages.',
+    'menu_name' => 'management',
+    'title' => 'Management',
+    'description' => 'Left menu in Vietcoop Dashboard pages..',
   );   
-//  menu_save($menu);       
+     
   watchdog('menu', 'Add menu link %name', array('%name' => $menu['menu_name']));  
   watchdog('menu', 'Check Dashboard menu %name', array('%name' => drupal_lookup_path('source', 'vc/dashboard')));
 	$file->uid = 1;

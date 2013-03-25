@@ -1,0 +1,4 @@
+-Dashboard {"url":"vc\/dashboard","description":"Site SEO admin page"}
+--Dashboard {"url":"vc\/dashboard","description":"Site SEO admin page"}
+--Contents {"url":"vc\/contents","description":"Content admin page"}
+--Site settings {"url":"vc\/site_settings","description":"Site settings admin page"}
