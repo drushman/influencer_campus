@@ -130,6 +130,16 @@ function campus_update_block_class() {
 }
 
 function campus_update_menu() {
+  $dashboard = array (
+    'menu_name'  => 'management',
+    'weight'     => -43,
+    'link_title' => 'Dashboard',
+    'link_path'  => 'vc/dashboard',
+    'module'     => 'vc_admin',
+    'plid'       => 441,
+  );
+  menu_link_save($dashboard);
+  /**
   $menu = array(
     'menu_name' => 'management',
     'title' => 'Management',
@@ -162,6 +172,7 @@ function campus_update_menu() {
 	$menu = menu_import_parse_menu_from_file($file->uri, $menu['menu_name'], $option );	
 	menu_import_save_menu($menu, $option);
   file_delete($file);
+  */
 }
 
 function campus_settings_form() {
