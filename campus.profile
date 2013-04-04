@@ -42,11 +42,7 @@ function campus_profile_setup() {
   module_enable(array('campus_blocks_setting'));
   campus_update_block_class() ;
   campus_update_menu();
-  
-  // Revert all features
-  features_rebuild();
-  features_revert();
-  cache_clear_all();
+  variable_set('initial_features_export_setup', 1);
 }
 
 /**
