@@ -40,6 +40,7 @@ function campus_install_tasks($install_state) {
 function campus_profile_setup() {
   campus_update_fpp();
   module_enable(array('campus_blocks_setting'));
+  module_disable(array('update'));
   campus_update_block_class() ;
   campus_update_menu();
   variable_set('initial_features_export_setup', 1);
