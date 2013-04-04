@@ -38,12 +38,12 @@ function campus_install_tasks($install_state) {
  * Installer task callback.
  */
 function campus_profile_setup() {
+  variable_set('initial_features_export_setup', 1);
   campus_update_fpp();
   module_enable(array('campus_blocks_setting'));
   module_disable(array('update'));
   campus_update_block_class() ;
-  campus_update_menu();
-  variable_set('initial_features_export_setup', 1);
+  campus_update_menu();  
 }
 
 /**
@@ -129,11 +129,11 @@ function campus_update_block_class() {
 function campus_update_menu() {
   $dashboard = array (
     'menu_name'  => 'management',
-    'weight'     => -43,
+    'weight'     => -99,
     'link_title' => 'Dashboard',
     'link_path'  => 'vc/dashboard',
     'module'     => 'vc_admin',
-    'plid'       => 441,
+    'plid'       => 1,
   );
   menu_link_save($dashboard);
   /**
